@@ -1,0 +1,218 @@
+#A
+print("Как Вас зовут?")
+print(f"Здравствуйте, {input()}!")
+print("Как дела?")
+mood = input()
+if mood == 'хорошо':
+    print('Я за вас рада!')
+elif mood == 'плохо':
+    print('Всё наладится!')
+
+#B.
+
+petya = int(input())
+vasya = int(input())
+if (petya > vasya):
+    print('Петя')
+elif (petya < vasya):
+    print('Вася')
+
+#C.
+
+Peter, Vasya, Tol = int(input()), int(input()), int(input())
+if Peter > Vasya:
+    if Peter > Tol:
+        print('Петя')
+    else:
+        print('Толя')
+else:
+    if Vasya > Tol:
+        print('Вася')
+    else:
+        print('Толя')
+
+#D.
+
+Peter, Vasya, Tol = int(input()), int(input()), int(input())
+if Peter > Vasya:
+    if Peter > Tol:
+        if Tol > Vasya:
+            print('1. Петя \n2. Толя \n3. Вася')
+        else:
+            print('1. Петя \n2. Вася \n3. Толя')
+    else:
+        print('1. Толя \n2. Петя \n3. Вася')
+else:
+    if Vasya > Tol:
+        if Tol > Peter:
+            print('1. Вася \n2. Толя \n3. Петя')
+        else:
+            print('1. Вася \n2. Петя \n3. Толя')
+    else:
+        print('1. Толя \n2. Вася \n3. Петя')
+
+#E.
+
+npetya = int(input())
+mvasya = int(input())
+petya = (6 + npetya)
+vasya = (12 + mvasya)
+if petya < vasya:
+    print('Вася')
+if vasya < petya:
+    print('Петя')
+
+#F.
+
+year = int(input())
+if year % 4 != 0:
+    print('NO')
+elif year % 100 == 0:
+    if year % 400 == 0:
+        print('YES')
+    else:
+        print('NO')
+else:
+    print('YES')
+
+#G.
+
+number = int(input())
+if number // 1000 == number % 10 and number % 1000 // 100 == number % 100 // 10:
+    print('YES')
+else:
+    print('NO')
+
+#H.
+
+text = input()
+if "зайка" in text:
+    print("YES")
+else:
+    print("NO")
+
+#I.
+
+first = input()
+second = input()
+third = input()
+if ord(first[0]) < ord(second[0]):
+    if ord(first[0]) < ord(third[0]):
+        print(first)
+    else:
+        print(third)
+elif ord(second[0]) < ord(third[0]):
+    print(second)
+else:
+    print(third)
+
+#J.
+
+num = int(input())
+first = num // 10
+last = num % 100
+sum1 = first // 10 + first % 10
+sum2 = last // 10 + last % 10
+if sum1 < sum2:
+    print(str(sum2) + str(sum1))
+else:
+    print(str(sum1) + str(sum2))
+
+#K.
+
+num = int(input())
+first = num // 100
+second = num // 10 % 10
+third = num % 10
+middle = first + second + third - max(first, second, third) - min(first, second, third)
+if max(first, second, third) + min(first, second, third) == middle * 2:
+    print('YES')
+else:
+    print('NO')
+
+#L.
+
+first = int(input())
+second = int(input())
+third = int(input())
+if first < (second + third) and second < (first + third) and third < (first + second):
+    print('YES')
+else:
+    print('NO')
+
+#M.
+
+elf = int(input())
+gnom = int(input())
+human = int(input())
+ne1 = elf // 10
+ne2 = elf % 10
+ng1 = gnom // 10
+ng2 = gnom % 10
+nh1 = human // 10
+nh2 = human % 10
+if ne1 == ng1 == nh1:
+    print(f'{ne1}')
+elif ne2 == ng2 == nh2:
+    print(f'{ne2}')
+
+#N.
+
+number = int(input())
+n1 = number // 100
+n2 = number // 10 % 10
+n3 = number % 10
+medium = (n1 + n2 + n3 - min(n1, n2, n3) - max(n1, n2, n3))
+if min(n1, n2, n3) != 0:
+    minimal = min(n1, n2, n3) * 10 + medium
+elif medium != 0:
+    minimal = medium * 10
+else:
+    minimal = max(n1, n2, n3) * 10
+maximal = max(n1, n2, n3) * 10 + medium
+print(minimal, maximal)
+
+#O.
+
+n1 = int(input())
+n2 = int(input())
+a = n1 // 10
+b = n1 % 10
+c = n2 // 10
+d = n2 % 10
+summa = a + b + c + d
+minimal = min(a, b, c, d)
+maximal = max(a, b, c, d)
+medium = (summa - minimal - maximal) % 10
+print(maximal * 100 + medium * 10 + minimal)
+
+#P.
+
+petya = int(input())
+vasya = int(input())
+tolya = int(input())
+first = max(petya, vasya, tolya)
+third = min(petya, vasya, tolya)
+second = petya + vasya + tolya - first - third
+if first == petya:
+    first_name = 'Петя'
+elif first == vasya:
+    first_name = 'Вася'
+else:
+    first_name = 'Толя'
+if second == petya:
+    second_name = 'Петя'
+elif second == vasya:
+    second_name = 'Вася'
+else:
+    second_name = 'Толя'
+if third == petya:
+    third_name = 'Петя'
+elif third == vasya:
+    third_name = 'Вася'
+else:
+    third_name = 'Толя'
+print(f'{first_name: ^24}')
+print(f'{second_name: ^8}{" ": ^16}')
+print(f'{" ": ^16}{third_name: ^8}')
+print(f'{"II": ^8}{"I": ^8}{"III": ^8}')
