@@ -1,0 +1,69 @@
+# Задача A
+
+for _ in range(int(input())):
+    if (word := input())[0] not in 'абв':
+        print('NO')
+        break
+else:
+    print('YES') 
+
+# Задача B
+
+for i in input():
+    print(i)
+
+# Задача C
+
+length = int(input())
+for _ in range(int(input())):
+    line = input()
+    print(line[:length - 3].ljust(length, ".") if len(line) > length else line)
+
+# Задача D
+
+while (line := input()) != "":
+    if line.endswith("@@@"):
+        pass
+    elif line.startswith("##"):
+        print(line[2:])
+    else:
+        print(line)
+
+# Задача E
+
+print('YES' if (line := input()) == line[::-1] else 'NO')
+
+# Задача F
+
+counter = 0
+for _ in range(int(input())):
+    counter += input().count("зайка")
+print(counter)
+
+# Задача G
+
+print(sum(map(int, input().split())))
+
+# Задача H
+
+for _ in range(int(input())):
+    if "зайка" in (place := input()):
+        print(place.index("зайка") + 1)
+    else:
+        print("Заек нет =(")
+
+# Задача I
+
+while (n := input()):
+    if not n.startswith('#'):
+        print(n[:(n.index('#') if '#' in n else len(n))])
+
+# Задача J
+
+data = []
+while (n := input()) != 'ФИНИШ':
+    data.extend(n.lower().split())
+max_count, data = 0, ''.join(data)
+for symbol in set(data):
+    max_count = max(max_count, data.count(symbol))
+print(min([i for i in set(data) if data.count(i) == max_count]))
