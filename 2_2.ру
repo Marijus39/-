@@ -1,4 +1,4 @@
-#A
+# Задача A
 print("Как Вас зовут?")
 print(f"Здравствуйте, {input()}!")
 print("Как дела?")
@@ -8,7 +8,7 @@ if mood == 'хорошо':
 elif mood == 'плохо':
     print('Всё наладится!')
 
-#B.
+# Задача B
 
 petya = int(input())
 vasya = int(input())
@@ -17,7 +17,7 @@ if (petya > vasya):
 elif (petya < vasya):
     print('Вася')
 
-#C.
+# Задача C
 
 Peter, Vasya, Tol = int(input()), int(input()), int(input())
 if Peter > Vasya:
@@ -31,7 +31,7 @@ else:
     else:
         print('Толя')
 
-#D.
+# Задача D
 
 Peter, Vasya, Tol = int(input()), int(input()), int(input())
 if Peter > Vasya:
@@ -51,7 +51,7 @@ else:
     else:
         print('1. Толя \n2. Вася \n3. Петя')
 
-#E.
+# Задача E
 
 npetya = int(input())
 mvasya = int(input())
@@ -62,7 +62,7 @@ if petya < vasya:
 if vasya < petya:
     print('Петя')
 
-#F.
+# Задача F
 
 year = int(input())
 if year % 4 != 0:
@@ -75,7 +75,7 @@ elif year % 100 == 0:
 else:
     print('YES')
 
-#G.
+# Задача G
 
 number = int(input())
 if number // 1000 == number % 10 and number % 1000 // 100 == number % 100 // 10:
@@ -83,7 +83,7 @@ if number // 1000 == number % 10 and number % 1000 // 100 == number % 100 // 10:
 else:
     print('NO')
 
-#H.
+# Задача H
 
 text = input()
 if "зайка" in text:
@@ -91,7 +91,7 @@ if "зайка" in text:
 else:
     print("NO")
 
-#I.
+# Задача I
 
 first = input()
 second = input()
@@ -106,7 +106,7 @@ elif ord(second[0]) < ord(third[0]):
 else:
     print(third)
 
-#J.
+# Задача J
 
 num = int(input())
 first = num // 10
@@ -118,7 +118,7 @@ if sum1 < sum2:
 else:
     print(str(sum1) + str(sum2))
 
-#K.
+# Задача K
 
 num = int(input())
 first = num // 100
@@ -130,7 +130,7 @@ if max(first, second, third) + min(first, second, third) == middle * 2:
 else:
     print('NO')
 
-#L.
+# Задача L
 
 first = int(input())
 second = int(input())
@@ -140,7 +140,7 @@ if first < (second + third) and second < (first + third) and third < (first + se
 else:
     print('NO')
 
-#M.
+# Задача M
 
 elf = int(input())
 gnom = int(input())
@@ -156,7 +156,7 @@ if ne1 == ng1 == nh1:
 elif ne2 == ng2 == nh2:
     print(f'{ne2}')
 
-#N.
+# Задача N
 
 number = int(input())
 n1 = number // 100
@@ -172,7 +172,7 @@ else:
 maximal = max(n1, n2, n3) * 10 + medium
 print(minimal, maximal)
 
-#O.
+# Задача O
 
 n1 = int(input())
 n2 = int(input())
@@ -186,7 +186,7 @@ maximal = max(a, b, c, d)
 medium = (summa - minimal - maximal) % 10
 print(maximal * 100 + medium * 10 + minimal)
 
-#P.
+# Задача P
 
 petya = int(input())
 vasya = int(input())
