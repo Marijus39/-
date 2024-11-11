@@ -1,0 +1,173 @@
+# Задача A
+
+print(''.join(set(input())))
+
+# Задача B
+
+print(''.join(set(input()).intersection(set(input()))))
+
+# Задача C
+
+obj = []
+for _ in range(int(input())):
+    obj.extend(input().split())
+print('\n'.join(set(obj)))
+
+# Задача D
+
+a = int(input())
+b = int(input())
+sem = set()
+oat = set()
+for _ in range(a):
+    sem.add(input())
+for _ in range(b):
+    oat.add(input())
+both = len(sem & oat)
+print(both if both else 'Таких нет')
+
+# Задача E
+
+a = int(input())
+b = int(input())
+p = []
+for _ in range(a + b):
+    p.append(input())
+c = len([i for i in p if p.count(i) == 1])
+print(c if c else 'Таких нет')
+
+# Задача F
+
+a = int(input())
+b = int(input())
+p = []
+for _ in range(a + b):
+    if (x := input()) not in p:
+        p.append(x)
+    else:
+        p.remove(x)
+if len(p):
+    for ch in sorted(p):
+        print(ch)
+else:
+    print('Таких нет')
+    
+# Задача G
+
+MORSE_DICT = {
+    "A": ".-",
+    "B": "-...",
+    "C": "-.-.",
+    "D": "-..",
+    "E": ".",
+    "F": "..-.",
+    "G": "--.",
+    "H": "....",
+    "I": "..",
+    "J": ".---",
+    "K": "-.-",
+    "L": ".-..",
+    "M": "--",
+    "N": "-.",
+    "O": "---",
+    "P": ".--.",
+    "Q": "--.-",
+    "R": ".-.",
+    "S": "...",
+    "T": "-",
+    "U": "..-",
+    "V": "...-",
+    "W": ".--",
+    "X": "-..-",
+    "Y": "-.--",
+    "Z": "--..",
+    "0": "-----",
+    "1": ".----",
+    "2": "..---",
+    "3": "...--",
+    "4": "....-",
+    "5": ".....",
+    "6": "-....",
+    "7": "--...",
+    "8": "---..",
+    "9": "----.",
+}
+phrase = input().split()
+for word in phrase:
+    code = [MORSE_DICT[char.upper()] for char in word]
+    print(*code)
+
+# Задача H
+
+a = int(input())
+ks = []
+for _ in range(a):
+    ks.extend([input().split()])
+ks.sort()
+key = input()
+count = 0
+for k in ks:
+    if key in k[1:]:
+        print(k[0])
+        count += 1
+if not count:
+    print('Таких нет')
+
+# Задача I
+
+d = {}
+while x := input().split():
+    for i in x:
+        if i not in d:
+            d[i] = 1
+        else:
+            d[i] += 1
+for j in d:
+    print(j, d[j])
+
+# Задача J
+
+trans_dict = {
+    "А": "A",
+    "Б": "B",
+    "В": "V",
+    "Г": "G",
+    "Д": "D",
+    "Е": "E",
+    "Ё": "E",
+    "Ж": "ZH",
+    "З": "Z",
+    "И": "I",
+    "Й": "I",
+    "К": "K",
+    "Л": "L",
+    "М": "M",
+    "Н": "N",
+    "О": "O",
+    "П": "P",
+    "Р": "R",
+    "С": "S",
+    "Т": "T",
+    "У": "U",
+    "Ф": "F",
+    "Х": "KH",
+    "Ц": "TC",
+    "Ч": "CH",
+    "Ш": "SH",
+    "Щ": "SHCH",
+    "Ы": "Y",
+    "Э": "E",
+    "Ю": "IU",
+    "Я": "IA",
+    "Ь": "",
+    "Ъ": "",
+}
+text = input()
+latin_text = []
+for char in text:
+    trans_char = trans_dict.get(char.upper(), char)
+    if char.isupper():
+        latin_text.append(trans_char.capitalize())
+    else:
+        latin_text.append(trans_char.lower())
+print("".join(latin_text))
