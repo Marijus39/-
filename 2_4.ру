@@ -1,4 +1,4 @@
-#a
+# Задача A
 
 n = int(input())
 for i in range(n):
@@ -6,14 +6,14 @@ for i in range(n):
         print((i + 1) * (j + 1), end=' ')
     print()
 
-#b
+# Задача B
 
 n = int(input())
 for i in range(1, n + 1):
     for j in range(1, n + 1):
         print(f'{j} * {i} = {i * j}')
 
-#c
+# Задача C
 
 size = int(input())
 print(1)
@@ -27,7 +27,7 @@ for num in range(2, size + 1):
     print(num, end=' ')
     current_len += 1
 
-#d
+# Задача D
 
 n = int(input())
 summ = 0
@@ -38,7 +38,7 @@ for _ in range(n):
         num //= 10
 print(summ)
 
-#e
+# Задача E
 
 n = int(input())
 counter = 0
@@ -50,7 +50,7 @@ for _ in range(n):
             counted = True
 print(counter)
 
-#f
+# Задача F
 
 n = int(input())
 a = int(input())
@@ -63,7 +63,7 @@ for _ in range(0, n - 1):
     a = b
 print(a)
 
-#g
+# Задача G
 
 start = int(input())
 for i in range(1, start + 1):
@@ -71,7 +71,7 @@ for i in range(1, start + 1):
         print(f'До старта {g} секунд(ы)')
     print(f'Старт {i}!!!')
 
-#h
+# Задача H
 
 kolvo = int(input())
 maxsum = 0
@@ -88,14 +88,14 @@ for _ in range(kolvo):
         namemaxx = name
 print(namemaxx)
 
-#i
+# Задача I
 
 number = ''
 for _ in range(int(input())):
     number += max(input())
 print(number)
 
-#j
+# Задача J
 
 n = int(input())
 for i in range(1, n - 1):
