@@ -1,0 +1,107 @@
+# Задача A
+
+def recursive_sum(*numbers) -> int:
+    if len(numbers) == 1:
+        return numbers[0]
+    return numbers[0] + recursive_sum(*numbers[1:])
+
+# Задача B
+
+def recursive_digit_sum(n):
+    return n % 10 + recursive_digit_sum(n // 10) if n else 0
+        
+# Задача C
+
+def make_equation(*args):
+    if len(args) == 1:
+        return str(args[0])
+    line = ') * x ' + ('- ' if args[-1] < 0 else '+ ') + str(args[-1])
+    return '(' + make_equation(*args[:-1]) + line
+
+# Задача D
+
+def answer(func: callable) -> str:
+
+    def wrapper(*args, **kwargs) -> str:
+        return f"Результат функции: {func(*args, **kwargs)}"
+
+    return wrapper
+
+# Задача E
+
+def result_accumulator(func):
+    result = []
+
+    def wrap(*args, method="accumulate"):
+        result.append(func(*args))
+        if method == "drop":
+            temp = result.copy()
+            result.clear()
+            return temp
+    return wrap
+
+# Задача F
+
+def merge_sort(numbers: list) -> list:
+    if len(numbers) <= 1:
+        return numbers
+    mid = len(numbers) // 2
+    left_part = numbers[:mid]
+    right_part = numbers[mid:]
+
+    return merge(merge_sort(left_part), merge_sort(right_part))
+
+
+def merge(left: list, right: list) -> list:
+    merged = []
+    left_index = right_index = 0
+    l_length, r_length = len(left), len(right)
+
+    while left_index < l_length and right_index < r_length:
+        if left[left_index] < right[right_index]:
+            merged.append(left[left_index])
+            left_index += 1
+        else:
+            merged.append(right[right_index])
+            right_index += 1
+
+    merged += left[left_index:]
+    merged += right[right_index:]
+
+    return merged
+    
+# Задача G
+
+def same_type(func):
+    def wrapper(*args):
+        if len({type(i) for i in args}) != 1:
+            print("Обнаружены различные типы данных")
+            return False
+        return func(*args)
+    return wrapper
+
+# Задача H
+
+def fibonacci(n):
+    n1, n2 = 0, 1
+    for i in range(n):
+        yield n1
+        n1, n2 = n2, n1 + n2
+
+# Задача I
+
+def cycle(line):
+    while line:
+        for i in line:
+            yield i
+
+# Задача J
+
+def make_linear(arr):
+    new_arr = []
+    for i in arr:
+        if isinstance(i, list):
+            new_arr.extend(make_linear(i))
+        else:
+            new_arr.append(i)
+    return new_arr
