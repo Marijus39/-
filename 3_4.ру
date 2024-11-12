@@ -1,0 +1,80 @@
+# Задание A
+
+for index, word in enumerate(input().split(), start=1):
+    print(f'{index}. {word}')
+     
+# Задание B
+
+for kids in zip(a := input().split(', '), b := input().split(', ')):
+    print(f'{kids[0]} - {kids[1]}')
+     
+# Задание C
+
+from itertools import count
+a, b, step = list(map(float, input().split()))
+for value in count(a, step):
+    if value <= b:
+        print(f'{value:.2f}')
+    else:
+        break
+     
+# Задание D
+
+from itertools import accumulate
+for value in accumulate(map(lambda x: ' ' + x, input().split())):
+    print(value[1:])
+
+# Задание E
+
+items = set()
+for _ in range(3):
+    items = items.union({item for item in input().split(', ')})
+for i, item in enumerate(sorted(items), start=1):
+    print(f'{i}. {item}')
+     
+# Задание F
+
+from itertools import product
+nominal = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'валет', 'дама', 'король', 'туз']
+suits = ['пик', 'треф', 'бубен', 'червей']
+suits.remove(input())
+for card in product(nominal, suits):
+    print(card[0], card[1])
+     
+# Задание G
+
+from itertools import product
+players, games = [], []
+for _ in range(int(input())):
+    players.append(input())
+for i in product(players, players):
+    if i[0] != i[1] and [i[1], i[0]] not in games:
+        games.append([i[0], i[1]])
+        print(f'{i[0]} - {i[1]}')
+     
+# Задание H
+
+n = int(input())
+porridge = [input() for _ in range(n)]
+repeats = int(input())
+counter, i = 0, 0
+while counter < repeats:
+    print(porridge[i])
+    counter += 1
+    i += 1
+    if i == n:
+        i = 0
+     
+# Задание I
+
+from itertools import product
+for i in (n := range(1, int(input()) + 1)):
+    print(' '.join(map(lambda x: str(x[0] * x[1]), product(n, [i]))))
+     
+# Задание J
+
+for i in range(1, (n := int(input())) - 1):
+    if i == 1:
+        print('А Б В')
+    for j in range(1, n - i):
+        print(f'{i} {j} {n - i - j}')
